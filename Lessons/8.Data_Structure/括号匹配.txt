@@ -1,0 +1,28 @@
+void BracketMatch(char *str)
+{   Stack S; int i; char ch;
+    InitStack(&S);
+    for(i=0;str[i]!=‘\0’;i++)
+    {  switch(str[i])
+         {  case ‘(’:
+            case ‘[’:
+            case ‘{’:
+                     Push(&S,str[i]);break;
+            case ‘)’:
+            case ‘]’:
+            case ‘}’:
+
+            if(IsEmpty(S))
+               { printf(“\n右括号多余！”);
+                 return ;}
+ else{  GetTop(&S,&ch);
+           if(Match(ch,str[i])) Pop(&S,&ch)；
+           else {  printf(“\n对应的左右括号不同类”);
+                     return; }
+         }
+
+         }/*Switch*/
+    }/*for*/
+
+If(IsEmpty(S))  printf(“\n括号匹配成功！”)；
+else printf(“\n左括号多余！”);
+} 

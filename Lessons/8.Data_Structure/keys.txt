@@ -1,0 +1,36 @@
+//冒泡排序
+int bublesort(int len , int arr[]){
+    int count = 0;
+    int temp;    
+    for(int i=len;i>0;i--){
+        for(int j=0;j<i-1;j++){
+            if (arr[j]>arr[j+1]){
+                count++;
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }        }    }
+// 深度优先搜索
+void DFS(int graph[MAX][MAX], int visited[MAX], int n, int v, int *count) {
+    visited[v] = 1;  // 标记当前节点为已访问
+    (*count)++;  // 增加计数
+    
+    // 递归访问所有相连且未访问的节点
+    for (int i = 0; i < n; i++) {
+        if (graph[v][i] == 1 && !visited[i]) {
+            DFS(graph, visited, n, i, count);
+        }}}
+// 弗洛伊德算法
+void floyd(int n) {
+    int i, j, k;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            scanf("%d", &distance[i][j]);
+        }
+    }
+    for (k = 1; k <= n; k++) {
+        for (i = 1; i <= n; i++) {
+            for (j = 1; j <= n; j++) {
+                if (distance[i][j] > distance[i][k] + distance[k][j]) {
+                    distance[i][j] = distance[i][k] + distance[k][j];
+                }}}}}
